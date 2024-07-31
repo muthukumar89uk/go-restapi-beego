@@ -10,11 +10,11 @@ import (
 func Router(repo repository.RepoOperation) {
 	operation := handlers.HandlersInstance(repo)
 
-	beego.Post("/create/employee", operation.CreateEmployee)
-	beego.Get("/get/employee", operation.GetAllEmployee)
-	beego.Get("/getById/:id", operation.GetEmployeeById)
-	beego.Put("/updateById/:id", operation.UpdateEmployeeById)
-	beego.Delete("/deleteById/:id", operation.DeleteEmployeeById)
+	beego.Post("/v1/api/create/employee", operation.CreateEmployee)
+	beego.Get("/v1/api/get/employees", operation.GetAllEmployee)
+	beego.Get("/v1/api/getById/:id", operation.GetEmployeeById)
+	beego.Put("/v1/api/updateById/:id", operation.UpdateEmployeeById)
+	beego.Delete("/v1/api/deleteById/:id", operation.DeleteEmployeeById)
 
 	beego.Run(":9000")
 }
